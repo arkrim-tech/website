@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
     <title>Arkrim | Next-Gen Archives & RIM</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@700&display=swap"
@@ -49,13 +50,16 @@
             position: relative;
             display: inline-block;
             margin-bottom: 30px;
-            background-color: #0a1118;
+            background-color: transparent;
         }
 
         .logo {
             width: 220px;
             height: auto;
             display: block;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            transform: translateZ(0);
         }
 
         .transition-tag {
