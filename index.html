@@ -38,7 +38,7 @@
         }
 
         header {
-            padding: 80px 20px 40px;
+            padding: 40px 20px 40px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,7 +49,7 @@
         .logo-container {
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             background-color: transparent;
         }
 
@@ -107,9 +107,26 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            /* This creates 3 equal columns on larger screens */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 25px;
             margin-bottom: 80px;
+            width: 100%; /* Ensures the grid uses the full container width */
+        }
+
+        /* Media Query to handle smaller screens and smartphones */
+        @media (max-width: 992px) {
+            .features-grid {
+                /* Switches to 2 columns for tablets */
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                /* Switches to 1 column for smartphones */
+                grid-template-columns: 1fr;
+            }
         }
 
         .card {
@@ -119,15 +136,15 @@
             padding: 40px;
             backdrop-filter: blur(12px);
             transition: all 0.3s ease;
+            
+            /* Ensures cards in the same row are equal height */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
         }
 
-        .card:hover {
-            border-color: var(--accent-cyan);
-            background: rgba(125, 249, 255, 0.05);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 10px 25px rgba(125, 249, 255, 0.15);
-        }
-
+        /* Push content to the top but allow flex stretching */
         .card h3 {
             font-family: 'Outfit', sans-serif;
             font-size: 1.5rem;
@@ -140,6 +157,14 @@
             font-size: 0.95rem;
             color: var(--text-muted);
             margin: 0;
+            flex-grow: 1; /* This pushes the footer or bottom of the card down */
+        }
+
+        .card:hover {
+            border-color: var(--accent-cyan);
+            background: rgba(125, 249, 255, 0.05);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 25px rgba(125, 249, 255, 0.15);
         }
 
         .standards {
@@ -346,6 +371,66 @@
         <section class="hero">
             <h1>Next-Generation Archives </br> and Records Management</h1>
             <p>Coming soon!</p>
+        </section>
+
+        <div class="features-grid">
+            <div class="card">
+                <h3>Feature 1</h3>
+                <p>Feature 1 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 2</h3>
+                <p>Feature 2 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 3</h3>
+                <p>Feature 3 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 4</h3>
+                <p>Feature 4 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 5</h3>
+                <p>Feature 5 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 6</h3>
+                <p>Feature 6 description</p>
+            </div>
+
+                        <div class="card">
+                <h3>Feature 7</h3>
+                <p>Feature 7 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 8</h3>
+                <p>Feature 8 description</p>
+            </div>
+
+            <div class="card">
+                <h3>Feature 9</h3>
+                <p>Feature 9 description</p>
+            </div>
+
+
+        </div>
+
+        <section class="standards">
+            <h2>Architected on Global Standards</h2>
+            <div class="standards-list">
+                <span>Standard 1</span>
+                <span>Standard 2</span>
+                <span>Standard 3</span>
+                <span>Standard 4</span>
+                <span>Standard 5</span>
+            </div>
         </section>
 
         <div id="mlb2-37795615" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-37795615">
